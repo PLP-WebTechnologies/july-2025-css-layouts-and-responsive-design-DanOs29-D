@@ -1,0 +1,126 @@
+/* ====================================
+    Base & Global Styles
+==================================== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header, .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ====================================
+    Flexbox Layouts
+==================================== */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px; /* Space between flex items */
+}
+
+.flex-item {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex-grow: 1; /* Allows items to grow and fill available space */
+}
+
+/* Responsive Cards with Flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are also rounded */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card h3, .card p {
+    padding: 0 15px;
+}
+
+/* ====================================
+    Grid Layout
+==================================== */
+.grid-container {
+    display: grid;
+    /* Creates 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Space between grid items */
+}
+
+.grid-item {
+    background-color: #dee2e6;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ====================================
+    Media Queries for Responsiveness
+==================================== */
+
+/* Tablet breakpoint: up to 768px */
+@media (max-width: 768px) {
+    .grid-container {
+        /* On tablets, change to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile breakpoint: up to 480px */
+@media (max-width: 480px) {
+    .flex-container {
+        /* On mobile, stack flex items vertically */
+        flex-direction: column;
+    }
+
+    .grid-container {
+        /* On mobile, change to a single column */
+        grid-template-columns: 1fr;
+    }
+}
